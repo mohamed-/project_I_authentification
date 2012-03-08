@@ -1,8 +1,8 @@
 # fichier principal de l'application Sinatra
-require 'sinatra'
+$:.unshift File.join(File.dirname(__FILE__),'lib')
 
-class User
-end
+require 'sinatra'
+require 'user'
 
 get '/users/new' do 
   erb :registration
