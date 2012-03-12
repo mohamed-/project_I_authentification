@@ -9,8 +9,8 @@ get '/users/new' do
 end
 
 post '/users' do 
-  u = User.create(params['user'])  
-  if u
+  u = User.new(params['user'])  
+  if u.save
     redirect "/users/#{params['user']['login']}"
   else
     erb :registration
